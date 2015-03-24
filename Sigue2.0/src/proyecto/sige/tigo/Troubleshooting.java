@@ -27,8 +27,8 @@ public class Troubleshooting extends javax.swing.JFrame {
         }
         if(motivos2.equalsIgnoreCase("SOPORTE TECNICO (SOP)"))
         {
-            motivo2[0] = "Seleccione";
-            motivo2[1] = "APROVISIOMADO";
+            motivo2[0] = "SELECIONE UNO"; // Se cambia a mayuscula el "Selecione"
+            motivo2[1] = "AVERIAS"; // Averias la primera en selecionar de Soporte tecnico
             motivo2[2] = "LENTIRUD";
             motivo2[3] = "INTERMITENCIA";
             motivo2[4] = "DESENGANCHADO";
@@ -41,16 +41,16 @@ public class Troubleshooting extends javax.swing.JFrame {
       String[] motivo3 = new String[20];
       
       
-        if(motivos3.equalsIgnoreCase("APROVISIOMADO"))
+        if(motivos3.equalsIgnoreCase("AVERIAS"))
             
             
         {
-            motivo3[0] = "Seleccione";
-            motivo3[1] = "SI";
-            motivo3[2] = "MONTO A PAGAR";
-            motivo3[3] = "N/C - N/D";
-            motivo3[4] = "CARGO AUTOMATICO";
-            motivo3[5] = "SOLICITA ARREGLO DE PAGO";
+            motivo3[0] = "SELECIONE UNO";
+            motivo3[1] = "INTERNET SIN SEÑAL ";
+            motivo3[2] = "DIGITAL-SIN SEÑAL";
+            motivo3[3] = "AVERÍA GENERAL";
+            motivo3[4] = "AVERÍA SIN SEÑAL";
+            motivo3[5] = " - ";
         }   
         
         if(motivos3.equalsIgnoreCase("LENTIRUD"))
@@ -124,13 +124,17 @@ public class Troubleshooting extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         cbMotivo1 = new javax.swing.JComboBox();
-        cbMotivo2 = new javax.swing.JComboBox();
-        cbMotivo3 = new javax.swing.JComboBox();
         cbMotivo4 = new javax.swing.JComboBox();
+        cbMotivo2 = new javax.swing.JComboBox();
         cbMotivo5 = new javax.swing.JComboBox();
+        cbMotivo3 = new javax.swing.JComboBox();
+        jGenerar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED), "Asistente de CRM´s"));
 
         cbMotivo1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         cbMotivo1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "MOTIVO DE LA LLAMADA", "ATENCION AL CLIENTE (SAC)", "SOPORTE TECNICO (SOP)" }));
@@ -142,27 +146,6 @@ public class Troubleshooting extends javax.swing.JFrame {
         cbMotivo1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbMotivo1ActionPerformed(evt);
-            }
-        });
-
-        cbMotivo2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        cbMotivo2.setPreferredSize(new java.awt.Dimension(150, 20));
-        cbMotivo2.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                cbMotivo2ItemStateChanged(evt);
-            }
-        });
-        cbMotivo2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbMotivo2ActionPerformed(evt);
-            }
-        });
-
-        cbMotivo3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        cbMotivo3.setPreferredSize(new java.awt.Dimension(150, 20));
-        cbMotivo3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cbMotivo3ActionPerformed(evt);
             }
         });
 
@@ -180,42 +163,90 @@ public class Troubleshooting extends javax.swing.JFrame {
             }
         });
 
+        cbMotivo2.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        cbMotivo2.setPreferredSize(new java.awt.Dimension(150, 20));
+        cbMotivo2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbMotivo2ItemStateChanged(evt);
+            }
+        });
+        cbMotivo2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbMotivo2ActionPerformed(evt);
+            }
+        });
+
         cbMotivo5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbMotivo5ActionPerformed(evt);
             }
         });
 
+        cbMotivo3.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        cbMotivo3.setPreferredSize(new java.awt.Dimension(150, 20));
+        cbMotivo3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbMotivo3ActionPerformed(evt);
+            }
+        });
+
+        jGenerar.setText("Generar");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(cbMotivo1, 0, 204, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cbMotivo2, 0, 213, Short.MAX_VALUE)
+                        .addGap(15, 15, 15)
+                        .addComponent(cbMotivo3, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(cbMotivo4, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(cbMotivo5, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jGenerar)))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbMotivo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbMotivo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbMotivo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cbMotivo4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cbMotivo5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                .addComponent(jGenerar)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(cbMotivo4, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(cbMotivo1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(cbMotivo2, 0, 202, Short.MAX_VALUE)
-                    .addComponent(cbMotivo5, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cbMotivo3, javax.swing.GroupLayout.PREFERRED_SIZE, 202, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cbMotivo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbMotivo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbMotivo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(47, 47, 47)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cbMotivo4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbMotivo5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(56, Short.MAX_VALUE))
+                .addGap(19, 19, 19)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -317,6 +348,8 @@ public class Troubleshooting extends javax.swing.JFrame {
     private javax.swing.JComboBox cbMotivo3;
     private javax.swing.JComboBox cbMotivo4;
     private javax.swing.JComboBox cbMotivo5;
+    private javax.swing.JButton jGenerar;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 
     private Object[] getMotivos1(String toString) {
