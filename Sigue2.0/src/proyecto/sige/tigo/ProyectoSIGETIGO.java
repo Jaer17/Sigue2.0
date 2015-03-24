@@ -9,7 +9,7 @@ public class ProyectoSIGETIGO {
 
 
     public static void main(String[] args) {
-        Troubleshooting principal= new Troubleshooting();
+        AssistCRM principal= new AssistCRM();
         principal.setVisible(true);
     }
     
