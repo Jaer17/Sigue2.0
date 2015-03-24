@@ -20,8 +20,8 @@ public class AssistCRM extends javax.swing.JFrame {
         
         if(motivos2.equalsIgnoreCase("AVERIAS"))  
         {
-            motivo2[0] = "INTERNET-SIN SEÑAL ";
-            motivo2[1] = "DIGITAL-SIN SEÑAL ";
+            motivo2[0] = "INTERNET SIN SEÑAL";
+            motivo2[1] = "DIGITAL SIN SEÑAL";
             motivo2[2] = "CONFIGURACIÓN-MÓDEM ";
             motivo2[3] = "AVERÍA GENERAL ";
             motivo2[4] = "AVERÍA-SIN SEÑAL";
@@ -39,6 +39,20 @@ public class AssistCRM extends javax.swing.JFrame {
         return motivo2;
     }
 
+    public String[] getMotivos3(String motivos3)
+    {
+        String[] motivo3 = new String[5];
+        
+        if(motivos3.equalsIgnoreCase("DIGITAL SIN SEÑAL"))  
+        {
+            motivo3[0] = "DTH";
+            motivo3[1] = "DIGITAL BASICO";
+            motivo3[2] = "DIGITAL HD ";
+            motivo3[3] = "AVERÍA GENERAL ";
+
+        }
+        return motivo3;
+        }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -46,6 +60,7 @@ public class AssistCRM extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         cbMotivo1 = new javax.swing.JComboBox();
         cbMotivo2 = new javax.swing.JComboBox();
+        cbMotivo3 = new javax.swing.JComboBox();
         jGenerar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -66,6 +81,13 @@ public class AssistCRM extends javax.swing.JFrame {
             }
         });
 
+        cbMotivo3.setModel(new javax.swing.DefaultComboBoxModel(new String[] { " " }));
+        cbMotivo3.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbMotivo3ItemStateChanged(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -73,6 +95,7 @@ public class AssistCRM extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cbMotivo3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(cbMotivo2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(cbMotivo1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(62, 62, 62))
@@ -83,7 +106,9 @@ public class AssistCRM extends javax.swing.JFrame {
                 .addComponent(cbMotivo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cbMotivo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 49, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cbMotivo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 23, Short.MAX_VALUE))
         );
 
         jGenerar.setText("Generar");
@@ -122,10 +147,11 @@ public class AssistCRM extends javax.swing.JFrame {
     private void cbMotivo1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbMotivo1ItemStateChanged
        if(evt.getStateChange() == ItemEvent.SELECTED)
         {
-            if(this.cbMotivo1.getSelectedIndex()>0)
+            if(this.cbMotivo1.getSelectedIndex()>-0)
             {
                 this.cbMotivo2.setModel(new DefaultComboBoxModel(this.getMotivos2(this.cbMotivo1.getSelectedItem().toString())));
             }
+            
         }
     }//GEN-LAST:event_cbMotivo1ItemStateChanged
 
@@ -154,9 +180,32 @@ public class AssistCRM extends javax.swing.JFrame {
             obj.setVisible(true);
             dispose();	
          }
+        if (iMoti.equals("INTERNET SIN SEÑAL")  )
+        {	
+           CRMAverias obj=new CRMAverias();
+            obj.setVisible(true);
+            dispose();	
+         }
+        if (iMoti.equals("DIGITAL SIN SEÑAL")  )
+        {	
+           CRMAverias obj=new CRMAverias();
+            obj.setVisible(true);
+            dispose();	
+         }
         
         
     }//GEN-LAST:event_jGenerarActionPerformed
+
+    private void cbMotivo3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbMotivo3ItemStateChanged
+      if(evt.getStateChange() == ItemEvent.SELECTED)
+          
+       { 
+           if(this.cbMotivo2.getSelectedIndex()>=0)
+            {
+                this.cbMotivo3.setModel(new DefaultComboBoxModel(this.getMotivos3(this.cbMotivo2.getSelectedItem().toString())));
+            }
+        }            
+    }//GEN-LAST:event_cbMotivo3ItemStateChanged
 
     /**
      * @param args the command line arguments
@@ -173,6 +222,7 @@ public class AssistCRM extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox cbMotivo1;
     private javax.swing.JComboBox cbMotivo2;
+    private javax.swing.JComboBox cbMotivo3;
     private javax.swing.JButton jGenerar;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

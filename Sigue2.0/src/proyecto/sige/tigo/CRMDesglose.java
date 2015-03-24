@@ -367,8 +367,8 @@ public class CRMDesglose extends javax.swing.JFrame {
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         StringSelection data = new StringSelection(""+vista);
         clipboard.setContents(data, data);
- 
-        dispose();
+            AssistCRM obj=new AssistCRM();
+            obj.setVisible(true);
     }//GEN-LAST:event_inicioGuardarActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
