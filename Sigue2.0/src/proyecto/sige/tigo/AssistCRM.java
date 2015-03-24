@@ -29,9 +29,9 @@ public class AssistCRM extends javax.swing.JFrame {
         }
         if(motivos2.equalsIgnoreCase("COBROS"))
         {
-            motivo2[0] = "DESGLOSE DE FACTURACIÓN ";
+            motivo2[0] = "DESGLOSE DE FACTURACIÓN";
             motivo2[1] = "MONTO A PAGAR";
-            motivo2[2] = "N/C - N/D   ";
+            motivo2[2] = "N/C - N/D";
             motivo2[3] = "SOLICITA ARREGLO DE PAGO ";
             motivo2[4] = "CARGO AUTOMÁTICO ";
             motivo2[4] = "RE CONEXIÓN  ";
@@ -134,44 +134,35 @@ public class AssistCRM extends javax.swing.JFrame {
     }//GEN-LAST:event_cbMotivo1ActionPerformed
 
     private void jGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jGenerarActionPerformed
-        String iMonto= cbMotivo2.getSelectedItem().toString();
+        String iMoti= cbMotivo2.getSelectedItem().toString();
         
-        if (iMonto.equals("MONTO A PAGAR")  )
+        if (iMoti.equals("MONTO A PAGAR")  )
         {	
            CRMMonto obj=new CRMMonto();
             obj.setVisible(true);
             dispose();	
-         }  
+         }
+        if (iMoti.equals("DESGLOSE DE FACTURACIÓN")  )
+        {	
+           CRMDesglose obj=new CRMDesglose();
+            obj.setVisible(true);
+            dispose();	
+         }
+        if (iMoti.equals("N/C - N/D")  )
+        {	
+           CRMNC obj=new CRMNC();
+            obj.setVisible(true);
+            dispose();	
+         }
+        
+        
     }//GEN-LAST:event_jGenerarActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AssistCRM.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AssistCRM.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AssistCRM.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AssistCRM.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new AssistCRM().setVisible(true);

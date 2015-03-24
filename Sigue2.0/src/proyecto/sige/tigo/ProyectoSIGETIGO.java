@@ -9,8 +9,8 @@ public class ProyectoSIGETIGO {
 
 
     public static void main(String[] args) {
-        AssistCRM principal= new AssistCRM();
-        principal.setVisible(true);
+        AssistCRM Move= new AssistCRM();
+        Move.setVisible(true);
     }
     
 }

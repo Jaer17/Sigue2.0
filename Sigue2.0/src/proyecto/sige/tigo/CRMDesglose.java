@@ -14,12 +14,12 @@ import javax.swing.JOptionPane;
  *
  * @author Nataly
  */
-public class CRMMonto extends javax.swing.JFrame {
+public class CRMDesglose extends javax.swing.JFrame {
 
     /**
      * Creates new form montoPagar
      */
-    public CRMMonto() {
+    public CRMDesglose() {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
@@ -66,7 +66,7 @@ public class CRMMonto extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("Monto a pagar");
+        jLabel1.setText("Desglose de Factura");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setText("PERSONA QUE LLAMA:");
@@ -302,7 +302,7 @@ public class CRMMonto extends javax.swing.JFrame {
         }
     String vista="";
     vista=("PERSONA QUIEN LLAMA: "+Nom
-            +"\nMONTO A PAGAR: ¢ "+Mon
+            +"\nMONTO A PAGAR:¢ "+Mon
             +"\nCORRESPONDIENTE AL MES: "+m1+m2+m3+m4+m5+m6+m7+m8+m9+m10+m11+m12);
     tCRM.setText(vista);
     }//GEN-LAST:event_GenerarActionPerformed
@@ -462,14 +462,18 @@ AssistCRM obj=new AssistCRM();
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CRMMonto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CRMDesglose.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CRMMonto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CRMDesglose.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CRMMonto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CRMDesglose.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CRMMonto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CRMDesglose.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -478,7 +482,7 @@ AssistCRM obj=new AssistCRM();
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CRMMonto().setVisible(true);
+                new CRMDesglose().setVisible(true);
             }
         });
     }
