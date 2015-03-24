@@ -30,7 +30,7 @@ public class AssistCRM extends javax.swing.JFrame {
         if(motivos2.equalsIgnoreCase("COBROS"))
         {
             motivo2[0] = "DESGLOSE DE FACTURACIÓN ";
-            motivo2[1] = "MONTO A PAGAR ";
+            motivo2[1] = "MONTO A PAGAR";
             motivo2[2] = "N/C - N/D   ";
             motivo2[3] = "SOLICITA ARREGLO DE PAGO ";
             motivo2[4] = "CARGO AUTOMÁTICO ";
@@ -46,6 +46,7 @@ public class AssistCRM extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         cbMotivo1 = new javax.swing.JComboBox();
         cbMotivo2 = new javax.swing.JComboBox();
+        jGenerar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,12 +70,12 @@ public class AssistCRM extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(cbMotivo2, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(cbMotivo1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(19, Short.MAX_VALUE))
+                    .addComponent(cbMotivo2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(cbMotivo1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(62, 62, 62))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -82,8 +83,15 @@ public class AssistCRM extends javax.swing.JFrame {
                 .addComponent(cbMotivo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(cbMotivo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 54, Short.MAX_VALUE))
+                .addGap(0, 49, Short.MAX_VALUE))
         );
+
+        jGenerar.setText("Generar");
+        jGenerar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jGenerarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -93,13 +101,19 @@ public class AssistCRM extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(197, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jGenerar)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(119, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                .addComponent(jGenerar)
+                .addContainerGap())
         );
 
         pack();
@@ -118,6 +132,17 @@ public class AssistCRM extends javax.swing.JFrame {
     private void cbMotivo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbMotivo1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbMotivo1ActionPerformed
+
+    private void jGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jGenerarActionPerformed
+        String iMonto= cbMotivo2.getSelectedItem().toString();
+        
+        if (iMonto.equals("MONTO A PAGAR")  )
+        {	
+           CRMMonto obj=new CRMMonto();
+            obj.setVisible(true);
+            dispose();	
+         }  
+    }//GEN-LAST:event_jGenerarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -157,6 +182,7 @@ public class AssistCRM extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox cbMotivo1;
     private javax.swing.JComboBox cbMotivo2;
+    private javax.swing.JButton jGenerar;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
