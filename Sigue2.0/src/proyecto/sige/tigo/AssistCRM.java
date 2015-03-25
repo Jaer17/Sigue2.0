@@ -20,11 +20,11 @@ public class AssistCRM extends javax.swing.JFrame {
         
         if(motivos2.equalsIgnoreCase("AVERIAS"))  
         {
-            motivo2[0] = "INTERNET SIN SEÑAL*";
-            motivo2[1] = "DIGITAL SIN SEÑAL*";
+            motivo2[0] = "INTERNET SIN SEÑAL";
+            motivo2[1] = "DIGITAL SIN SEÑAL";
             motivo2[2] = "CONFIGURACIÓN-MÓDEM ";
-            motivo2[3] = "AVERÍA GENERAL*";
-            motivo2[4] = "AVERÍA SIN SEÑAL*";
+            motivo2[3] = "AVERÍA GENERAL";
+            motivo2[4] = "AVERÍA SIN SEÑAL";
             motivo2[5] = "INTERNET REINICIAR";
             motivo2[6] = "TV SIN SEÑAL";
             motivo2[7] = "INTERNET INTERMITENCIA";
@@ -34,11 +34,11 @@ public class AssistCRM extends javax.swing.JFrame {
         }
         if(motivos2.equalsIgnoreCase("COBROS"))
         {
-            motivo2[0] = "DESGLOSE DE FACTURACIÓN*";
-            motivo2[1] = "MONTO A PAGAR*";
-            motivo2[2] = "N/C - N/D*";
+            motivo2[0] = "DESGLOSE DE FACTURACIÓN";
+            motivo2[1] = "MONTO A PAGAR";
+            motivo2[2] = "N/C - N/D";
             motivo2[3] = "SOLICITA ARREGLO DE PAGO";
-            motivo2[4] = "CARGO AUTOMÁTICO*";
+            motivo2[4] = "CARGO AUTOMÁTICO";
             motivo2[5] = "RECONEXIÓN";
             motivo2[6] = "DESCO FALTA DE PAGO BAJA MOROSO";
             motivo2[7] = "DESCO FALTA DE PAGO BAJA MOROSO";
@@ -51,20 +51,22 @@ public class AssistCRM extends javax.swing.JFrame {
         return motivo2;
     }
 
-    public String[] getMotivos3(String motivos3)
+    
+    public String[] getMotivos4(String motivos4)
     {
-        String[] motivo3 = new String[5];
+        String[] motivo4 = new String[20];
         
-        if(motivos3.equalsIgnoreCase("DIGITAL SIN SEÑAL"))  
+      
+        if(motivos4.equalsIgnoreCase("DIGITAL SIN SEÑAL"))
         {
-            motivo3[0] = "DTH";
-            motivo3[1] = "DIGITAL BASICO";
-            motivo3[2] = "DIGITAL HD ";
-            motivo3[3] = "AVERÍA GENERAL ";
+             motivo4[0] = "DTH";
+            motivo4[1] = "DIGITAL BASICO";
+            motivo4[2] = "DIGITAL HD ";
+            motivo4[3] = "AVERÍA GENERAL ";
 
         }
-        return motivo3;
-        }
+        return motivo4;
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -242,7 +244,7 @@ public class AssistCRM extends javax.swing.JFrame {
         {
             if(this.cbMotivo2.getSelectedIndex()>=0)
             {
-                this.cbMotivo3.setModel(new DefaultComboBoxModel(this.getMotivos2(this.cbMotivo2.getSelectedItem().toString())));
+                this.cbMotivo3.setModel(new DefaultComboBoxModel(this.getMotivos4(this.cbMotivo2.getSelectedItem().toString())));
                                     }
         }
     }//GEN-LAST:event_cbMotivo2ItemStateChanged
