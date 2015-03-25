@@ -23,8 +23,8 @@ public class AssistCRM extends javax.swing.JFrame {
             motivo2[0] = "INTERNET SIN SEÑAL";
             motivo2[1] = "DIGITAL SIN SEÑAL";
             motivo2[2] = "CONFIGURACIÓN-MÓDEM ";
-            motivo2[3] = "AVERÍA GENERAL ";
-            motivo2[4] = "AVERÍA-SIN SEÑAL";
+            motivo2[3] = "AVERÍA GENERAL";
+            motivo2[4] = "AVERÍA SIN SEÑAL";
             motivo2[5] = "INTERNET-REINICIAR ";
         }
         if(motivos2.equalsIgnoreCase("COBROS"))
@@ -189,6 +189,18 @@ public class AssistCRM extends javax.swing.JFrame {
         if (iMoti.equals("DIGITAL SIN SEÑAL")  )
         {	
            CRMAverias obj=new CRMAverias();
+            obj.setVisible(true);
+            dispose();	
+         }
+        if (iMoti.equals("AVERÍA GENERAL")  )
+        {	
+           CRMAveriaGeneral obj=new CRMAveriaGeneral();
+            obj.setVisible(true);
+            dispose();	
+         }
+        if (iMoti.equals("AVERÍA SIN SEÑAL")  )
+        {	
+           CRMAveriasSinSenal obj=new CRMAveriasSinSenal();
             obj.setVisible(true);
             dispose();	
          }
