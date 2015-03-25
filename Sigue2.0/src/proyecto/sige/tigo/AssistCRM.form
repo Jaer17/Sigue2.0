@@ -118,6 +118,9 @@
               <StringArray count="0"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="cbMotivo2ItemStateChanged"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JComboBox" name="cbMotivo3">
           <Properties>

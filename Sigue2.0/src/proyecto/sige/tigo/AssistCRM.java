@@ -20,21 +20,33 @@ public class AssistCRM extends javax.swing.JFrame {
         
         if(motivos2.equalsIgnoreCase("AVERIAS"))  
         {
-            motivo2[0] = "INTERNET SIN SEÑAL";
-            motivo2[1] = "DIGITAL SIN SEÑAL";
+            motivo2[0] = "INTERNET SIN SEÑAL*";
+            motivo2[1] = "DIGITAL SIN SEÑAL*";
             motivo2[2] = "CONFIGURACIÓN-MÓDEM ";
-            motivo2[3] = "AVERÍA GENERAL";
-            motivo2[4] = "AVERÍA SIN SEÑAL";
-            motivo2[5] = "INTERNET-REINICIAR ";
+            motivo2[3] = "AVERÍA GENERAL*";
+            motivo2[4] = "AVERÍA SIN SEÑAL*";
+            motivo2[5] = "INTERNET REINICIAR";
+            motivo2[6] = "TV SIN SEÑAL";
+            motivo2[7] = "INTERNET INTERMITENCIA";
+            motivo2[8] = "INTERNET MONITOREO";
+            motivo2[9] = "INTERNET PROVISIONAR";
+            motivo2[10] = "INTERNET LENTITUD";
         }
         if(motivos2.equalsIgnoreCase("COBROS"))
         {
-            motivo2[0] = "DESGLOSE DE FACTURACIÓN";
-            motivo2[1] = "MONTO A PAGAR";
-            motivo2[2] = "N/C - N/D";
-            motivo2[3] = "SOLICITA ARREGLO DE PAGO ";
-            motivo2[4] = "CARGO AUTOMÁTICO ";
-            motivo2[4] = "RE CONEXIÓN  ";
+            motivo2[0] = "DESGLOSE DE FACTURACIÓN*";
+            motivo2[1] = "MONTO A PAGAR*";
+            motivo2[2] = "N/C - N/D*";
+            motivo2[3] = "SOLICITA ARREGLO DE PAGO";
+            motivo2[4] = "CARGO AUTOMÁTICO*";
+            motivo2[5] = "RECONEXIÓN";
+            motivo2[6] = "DESCO FALTA DE PAGO BAJA MOROSO";
+            motivo2[7] = "DESCO FALTA DE PAGO BAJA MOROSO";
+        }
+        if(motivos2.equalsIgnoreCase("VENTAS"))
+        {
+            motivo2[0] = "PREVENTA";
+ 
         }
         return motivo2;
     }
@@ -78,6 +90,12 @@ public class AssistCRM extends javax.swing.JFrame {
         cbMotivo1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbMotivo1ActionPerformed(evt);
+            }
+        });
+
+        cbMotivo2.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbMotivo2ItemStateChanged(evt);
             }
         });
 
@@ -204,20 +222,30 @@ public class AssistCRM extends javax.swing.JFrame {
             obj.setVisible(true);
             dispose();	
          }
+        if (iMoti.equals("CARGO AUTOMÁTICO")  )
+        {	
+           CRMCargoAutomatico obj=new CRMCargoAutomatico();
+            obj.setVisible(true);
+            dispose();	
+         }
+        
         
         
     }//GEN-LAST:event_jGenerarActionPerformed
 
     private void cbMotivo3ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbMotivo3ItemStateChanged
-      if(evt.getStateChange() == ItemEvent.SELECTED)
-          
-       { 
-           if(this.cbMotivo2.getSelectedIndex()>=0)
-            {
-                this.cbMotivo3.setModel(new DefaultComboBoxModel(this.getMotivos3(this.cbMotivo2.getSelectedItem().toString())));
-            }
-        }            
+       
     }//GEN-LAST:event_cbMotivo3ItemStateChanged
+
+    private void cbMotivo2ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbMotivo2ItemStateChanged
+    if(evt.getStateChange() == ItemEvent.SELECTED)
+        {
+            if(this.cbMotivo2.getSelectedIndex()>=0)
+            {
+                this.cbMotivo3.setModel(new DefaultComboBoxModel(this.getMotivos2(this.cbMotivo2.getSelectedItem().toString())));
+                                    }
+        }
+    }//GEN-LAST:event_cbMotivo2ItemStateChanged
 
     /**
      * @param args the command line arguments
