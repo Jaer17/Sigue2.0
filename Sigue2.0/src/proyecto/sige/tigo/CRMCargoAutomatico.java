@@ -210,14 +210,16 @@ public class CRMCargoAutomatico extends javax.swing.JFrame {
             +"\nTIPO DE GESTION: "+Moti
             +"\nOBSERVACION: "+Nom+" "+Moti2);
     tCRM.setText(vista);
-    Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+        Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         StringSelection data = new StringSelection(""+vista);
         clipboard.setContents(data, data);
-            dispose();
+        AssistCRM obj=new AssistCRM();
+        obj.setVisible(true);    
+        dispose();
     }//GEN-LAST:event_inicioGuardarActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-AssistCRM obj=new AssistCRM();
+            AssistCRM obj=new AssistCRM();
             obj.setVisible(true);
             dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
@@ -254,6 +256,7 @@ AssistCRM obj=new AssistCRM();
             AssistCRM obj=new AssistCRM();
             obj.setVisible(true);
             dispose();
+            
     }//GEN-LAST:event_btAtrasActionPerformed
 
     /**

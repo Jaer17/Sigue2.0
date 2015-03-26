@@ -3,6 +3,7 @@ package proyecto.sige.tigo;
 
 import java.awt.event.ItemEvent;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 
 public class AssistCRM extends javax.swing.JFrame {
 
@@ -82,7 +83,7 @@ public class AssistCRM extends javax.swing.JFrame {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(153, 153, 255), null, null), "Asistente de CRM"));
 
         cbMotivo1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        cbMotivo1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SELECCIONE", "AVERIAS", "COBROS" }));
+        cbMotivo1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "MOTIVO DE CRM", "AVERIAS", "COBROS", "VENTAS" }));
         cbMotivo1.setPreferredSize(new java.awt.Dimension(150, 20));
         cbMotivo1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -231,7 +232,17 @@ public class AssistCRM extends javax.swing.JFrame {
             dispose();	
          }
         
+//        working note@ Aqui se encuentran los q no se como tipificar
         
+         if (iMoti.equals("INTERNET INTERMITENCIA")  )
+        {	
+           String nl = System.getProperty("line.separator");
+        Object msj = "Seguimos trabajando en ella"
+        + nl +"cualquier sugerencia a dalvarez@tigo.cr";
+        JOptionPane.showMessageDialog(null,msj,"BETA TEST",JOptionPane.INFORMATION_MESSAGE);
+         }
+         
+         
         
     }//GEN-LAST:event_jGenerarActionPerformed
 
