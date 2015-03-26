@@ -582,8 +582,13 @@ public class AssisCorreos extends javax.swing.JFrame {
             {
              p=("operacionesheredia@tigo.co.cr\nadjuntosyseguimientos@amnet.cr\nwip@tigo.co.cr");   
             }
-        vista2=(""+p);
-        panel2.setText(vista2);
+//        SAN JOSE OESTE
+        if (Nodos.equals("SASR01") || Nodos.equals("SASR02") || Nodos.equals("SASR03") || Nodos.equals("SASR04") || Nodos.equals("SASR05") || Nodos.equals("SASR06") || Nodos.equals("SASR07") || Nodos.equals("SASR08") || Nodos.equals("SASR09") || Nodos.equals("SASR010") || Nodos.equals("SASR11") || Nodos.equals("SASR12") || Nodos.equals("SASR13") || Nodos.equals("SASR15") || Nodos.equals("SASR17") || Nodos.equals("SASR18") || Nodos.equals("SASA01") || Nodos.equals("SASA02") || Nodos.equals("SASA03") || Nodos.equals("SASA04") || Nodos.equals("SASA05") || Nodos.equals("SASA06") || Nodos.equals("SASA07") || Nodos.equals("SASA08") || Nodos.equals("SASA09") || Nodos.equals("SAPV01") || Nodos.equals("SAPV02") || Nodos.equals("SAPV03") || Nodos.equals("SAPV04") || Nodos.equals("SAPV05") || Nodos.equals("SAPV06") || Nodos.equals("SAPV07") || Nodos.equals("SAPV08") || Nodos.equals("SAPV09") || Nodos.equals("SAPV10") || Nodos.equals("SAPV11") || Nodos.equals("SAPV12") || Nodos.equals("SAPV13") || Nodos.equals("SAPV14") || Nodos.equals("SAPV15") || Nodos.equals("SAUR01") || Nodos.equals("SAUR02") || Nodos.equals("SAUR03") || Nodos.equals("SAUR04") || Nodos.equals("SAUR05") || Nodos.equals("SAUR06") || Nodos.equals("SAUR07") || Nodos.equals("SAUR08") || Nodos.equals("SAUR09") || Nodos.equals("SRCC01") || Nodos.equals("SRCC02") || Nodos.equals("SRCC03") || Nodos.equals("SRCC04") || Nodos.equals("SRCC05") || Nodos.equals("SRCC06") || Nodos.equals("SAEZ01") || Nodos.equals("SAEZ02") || Nodos.equals("SAEZ03") || Nodos.equals("SAEZ04") || Nodos.equals("SAEZ05") || Nodos.equals("SAEZ06") || Nodos.equals("SRST01") || Nodos.equals("SRST02") || Nodos.equals("SRST03") || Nodos.equals("SRST04") || Nodos.equals("SRST05"))
+            {
+            
+            }
+            vista2=(""+p);
+            panel2.setText(vista2);
 
         Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         StringSelection data = new StringSelection(""+vista);
