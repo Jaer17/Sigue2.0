@@ -4,13 +4,12 @@ package proyecto.sige.tigo;
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
 import java.awt.datatransfer.StringSelection;
-import javax.swing.DefaultComboBoxModel;
 
 
-public class CRMCargoAutomatico extends javax.swing.JFrame {
+public class CRMAveriasDTH extends javax.swing.JFrame {
 
 
-    public CRMCargoAutomatico() {
+    public CRMAveriasDTH() {
         initComponents();
         setLocationRelativeTo(null);
         setResizable(false);
@@ -24,12 +23,16 @@ public class CRMCargoAutomatico extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jTextNombre = new javax.swing.JTextField();
+        jTextMonto = new javax.swing.JTextField();
         Generar = new javax.swing.JButton();
         inicioGuardar = new javax.swing.JButton();
         btAtras = new javax.swing.JButton();
-        cbMotivo = new javax.swing.JComboBox();
+        jLabel5 = new javax.swing.JLabel();
+        jTextMonto1 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jTextMonto2 = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         tCRM = new javax.swing.JTextPane();
         jMenuBar1 = new javax.swing.JMenuBar();
@@ -40,13 +43,13 @@ public class CRMCargoAutomatico extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setText("Cargo Automatico");
+        jLabel1.setText("Internet sin señal");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setText("PERSONA QUE LLAMA:");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel4.setText("TIPO DE GESTION:");
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel3.setText("TAP:");
 
         Generar.setText("Generar CRM");
         Generar.addActionListener(new java.awt.event.ActionListener() {
@@ -69,7 +72,11 @@ public class CRMCargoAutomatico extends javax.swing.JFrame {
             }
         });
 
-        cbMotivo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "SELECIONE UNO", "INCLUCIÓN", "CAMBIO", "EXCLUCIÓN" }));
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel5.setText("DIRECCION:");
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel6.setText("TELEFONO:");
 
         tCRM.setEditable(false);
         jScrollPane2.setViewportView(tCRM);
@@ -103,32 +110,32 @@ public class CRMCargoAutomatico extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btAtras)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(inicioGuardar))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addComponent(Generar)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(Generar)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                            .addComponent(jLabel4)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(cbMotivo, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                            .addComponent(jLabel2)
-                                            .addGap(59, 59, 59)
-                                            .addComponent(jTextNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addGap(0, 98, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(btAtras)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(inicioGuardar)))
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6))
+                                .addGap(90, 90, 90)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextMonto2, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)
+                                    .addComponent(jTextMonto, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jTextMonto1))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 476, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,13 +148,21 @@ public class CRMCargoAutomatico extends javax.swing.JFrame {
                     .addComponent(jTextNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(cbMotivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel5)
+                    .addComponent(jTextMonto1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel3)
+                    .addComponent(jTextMonto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jTextMonto2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(Generar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(inicioGuardar)
                     .addComponent(btAtras))
@@ -160,27 +175,17 @@ public class CRMCargoAutomatico extends javax.swing.JFrame {
     private void GenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenerarActionPerformed
 
     String Nom= jTextNombre.getText().toString();
-    String Moti= cbMotivo.getSelectedItem().toString();
-    String Moti2="";
-    
-    
-        if (Moti.equals("INCLUCIÓN")  )
-        {	
-           Moti2="llama para solicitar el inclucion del pastico en donde se le esta cargando las facturas, el cliente desea que se le debite automaticamente";
-        }
-        if (Moti.equals("CAMBIO")  )
-        {	
-           Moti2="llama para solicitar el cambio del pastico en donde se le esta cargando las facturas";
-         }
-        if (Moti.equals("EXCLUCIÓN")  )
-        {	
-           Moti2="llama para solicitar el exclucion del pastico en donde se le esta cargando las facturas, el cliente ya no desea que se le debite automaticamente";
-         }
+    String Mon= jTextMonto.getText().toString(); 
+    String Dia= jTextMonto1.getText().toString();
+    String Regi= jTextMonto2.getText().toString();
     
     String vista="";
     vista=("PERSONA QUIEN LLAMA: "+Nom
-            +"\nTIPO DE GESTION: "+Moti
-            +"\nOBSERVACION: "+Nom+" "+Moti2);
+            +"\nDIRECCION: "+Dia
+            +"\nTAP: "+Mon
+            +"\nTELEFONO:"+Regi
+            +"\nOBSERVACION: "+Nom+" llama para reportar que no tiene señal"
+            +"  ningun servicio, el CM se encuentra Desenganchado y no hay TT");
     tCRM.setText(vista);
     Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         StringSelection data = new StringSelection(""+vista);
@@ -189,63 +194,45 @@ public class CRMCargoAutomatico extends javax.swing.JFrame {
 
     private void inicioGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inicioGuardarActionPerformed
    String Nom= jTextNombre.getText().toString();
-    String Moti= cbMotivo.getSelectedItem().toString();
-    String Moti2="";
-    
-        if (Moti.equals("INCLUCIÓN")  )
-        {	
-           Moti2="llama para solicitar el inclucion del pastico en donde se le esta cargando las facturas, el cliente desea que se le debite automaticamente";
-         }
-        if (Moti.equals("CAMBIO")  )
-        {	
-           Moti2="llama para solicitar el cambio del pastico en donde se le esta cargando las facturas";
-         }
-        if (Moti.equals("EXCLUCIÓN")  )
-        {	
-           Moti2="llama para solicitar el exclucion del pastico en donde se le esta cargando las facturas, el cliente ya no desea que se le debite automaticamente";
-         }
+    String Mon= jTextMonto.getText().toString(); 
+    String Dia= jTextMonto1.getText().toString();
+    String Regi= jTextMonto2.getText().toString();
     
     String vista="";
     vista=("PERSONA QUIEN LLAMA: "+Nom
-            +"\nTIPO DE GESTION: "+Moti
-            +"\nOBSERVACION: "+Nom+" "+Moti2);
+            +"\nDIRECCION: "+Dia
+            +"\nTAP: "+Mon
+            +"\nTELEFONO:"+Regi
+            +"\nOBSERVACION: "+Nom+" llama para reportar que no tiene señal"
+            +"  ningun servicio, el CM se encuentra Desenganchado y no hay TT");
     tCRM.setText(vista);
-        Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+    Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         StringSelection data = new StringSelection(""+vista);
         clipboard.setContents(data, data);
         AssistCRM obj=new AssistCRM();
-        obj.setVisible(true);    
-        dispose();
+            obj.setVisible(true);
+            dispose();
     }//GEN-LAST:event_inicioGuardarActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-            AssistCRM obj=new AssistCRM();
+AssistCRM obj=new AssistCRM();
             obj.setVisible(true);
             dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void ShGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShGenerarActionPerformed
-  String Nom= jTextNombre.getText().toString();
-    String Moti= cbMotivo.getSelectedItem().toString();
-    String Moti2="";
-    
-        if (Moti.equals("INCLUCIÓN")  )
-        {	
-           Moti2="llama para solicitar el inclucion del pastico en donde se le esta cargando las facturas, el cliente desea que se le debite automaticamente";
-         }
-        if (Moti.equals("CAMBIO")  )
-        {	
-           Moti2="llama para solicitar el cambio del pastico en donde se le esta cargando las facturas";
-         }
-        if (Moti.equals("EXCLUCIÓN")  )
-        {	
-           Moti2="llama para solicitar el exclucion del pastico en donde se le esta cargando las facturas, el cliente ya no desea que se le debite automaticamente";
-         }
+   String Nom= jTextNombre.getText().toString();
+    String Mon= jTextMonto.getText().toString(); 
+    String Dia= jTextMonto1.getText().toString();
+    String Regi= jTextMonto2.getText().toString();
     
     String vista="";
     vista=("PERSONA QUIEN LLAMA: "+Nom
-            +"\nTIPO DE GESTION: "+Moti
-            +"\nOBSERVACION: "+Nom+" "+Moti2);
+            +"\nDIRECCION: "+Dia
+            +"\nTAP: "+Mon
+            +"\nTELEFONO:"+Regi
+            +"\nOBSERVACION: "+Nom+" llama para reportar que no tiene señal"
+            +"  ningun servicio, el CM se encuentra Desenganchado y no hay TT");
     tCRM.setText(vista);
     Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
         StringSelection data = new StringSelection(""+vista);
@@ -256,7 +243,6 @@ public class CRMCargoAutomatico extends javax.swing.JFrame {
             AssistCRM obj=new AssistCRM();
             obj.setVisible(true);
             dispose();
-            
     }//GEN-LAST:event_btAtrasActionPerformed
 
     /**
@@ -276,21 +262,22 @@ public class CRMCargoAutomatico extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CRMAverias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CRMAveriasDTH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CRMAverias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CRMAveriasDTH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CRMAverias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CRMAveriasDTH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CRMAverias.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CRMAveriasDTH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-       
+        //</editor-fold>
+
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CRMAverias().setVisible(true);
+                new CRMAveriasDTH().setVisible(true);
             }
         });
     }
@@ -299,15 +286,19 @@ public class CRMCargoAutomatico extends javax.swing.JFrame {
     private javax.swing.JButton Generar;
     private javax.swing.JMenuItem ShGenerar;
     private javax.swing.JButton btAtras;
-    private javax.swing.JComboBox cbMotivo;
     private javax.swing.JButton inicioGuardar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextField jTextMonto;
+    private javax.swing.JTextField jTextMonto1;
+    private javax.swing.JTextField jTextMonto2;
     private javax.swing.JTextField jTextNombre;
     private javax.swing.JTextPane tCRM;
     // End of variables declaration//GEN-END:variables

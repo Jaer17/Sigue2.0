@@ -13,6 +13,10 @@ public class AssistCRM extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Asistente de CRM");
+        
+//        Combobox Advance
+        cbMotivo2.setVisible(false);
+        cbMotivo3.setVisible(false);
     }
 
     public String[] getMotivos2(String motivos2)
@@ -174,6 +178,17 @@ public class AssistCRM extends javax.swing.JFrame {
             }
             
         }
+       
+       String iMoti= cbMotivo1.getSelectedItem().toString();
+             
+        if (iMoti.equals("MOTIVO DE CRM")  )
+        {	
+            cbMotivo2.setVisible(false);
+         }else{	
+            cbMotivo2.setVisible(true);   
+         }
+        
+        
     }//GEN-LAST:event_cbMotivo1ItemStateChanged
 
     private void cbMotivo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbMotivo1ActionPerformed
@@ -182,6 +197,7 @@ public class AssistCRM extends javax.swing.JFrame {
 
     private void jGenerarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jGenerarActionPerformed
         String iMoti= cbMotivo2.getSelectedItem().toString();
+        String iMoti2= cbMotivo3.getSelectedItem().toString();
         
         if (iMoti.equals("MONTO A PAGAR")  )
         {	
@@ -209,9 +225,12 @@ public class AssistCRM extends javax.swing.JFrame {
          }
         if (iMoti.equals("DIGITAL SIN SEÑAL")  )
         {	
-           CRMAverias obj=new CRMAverias();
+          if (iMoti2.equals("DTH")  )
+            {	
+            CRMAveriaDTH obj=new CRMAveriaDTH();
             obj.setVisible(true);
             dispose();	
+                }
          }
         if (iMoti.equals("AVERÍA GENERAL")  )
         {	
@@ -258,6 +277,14 @@ public class AssistCRM extends javax.swing.JFrame {
                 this.cbMotivo3.setModel(new DefaultComboBoxModel(this.getMotivos4(this.cbMotivo2.getSelectedItem().toString())));
                                     }
         }
+    String iMoti2= cbMotivo2.getSelectedItem().toString();
+    if (iMoti2.equals("DIGITAL SIN SEÑAL")  )
+        {	
+            cbMotivo3.setVisible(true);
+         }else{
+        cbMotivo3.setVisible(false);
+            }
+    
     }//GEN-LAST:event_cbMotivo2ItemStateChanged
 
     /**
